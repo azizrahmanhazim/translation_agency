@@ -1,0 +1,975 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Sticky Navbar */
+.navbar {
+    background-color: #002147 !important;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.navbar-brand:hover {
+    color: #f8b400 !important;
+}
+.navbar a {
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+.navbar a:hover {
+    color: #f8b400 !important;
+    transform: scale(1.05);
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+/* Smooth Section Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.section {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Hero Section */
+
+.jumbotron {
+    background: linear-gradient(to right, #002147, #0056b3);
+    color: white;
+    border-radius: 10px;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation-delay: 0.2s;
+}
+.jumbotron h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+}
+.jumbotron p {
+    font-size: 1.3rem;
+}
+.jumbotron .btn {
+    font-size: 1.2em;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+.jumbotron .btn:hover {
+    background-color: #f8b400;
+    transform: translateY(-3px);
+}
+
+/* Features Section */
+.features-section {
+    background-color: #f8f9fa;
+    padding: 70px 0;
+    animation-delay: 0.4s;
+}
+.features-section h4 {
+    font-weight: 600;
+    color: #002147;
+}
+.features-section .col-md-4 {
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.features-section .col-md-4:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 33, 71, 0.05);
+    border-radius: 10px;
+}
+.features-section i {
+    margin-bottom: 12px;
+    color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem; /* Reduce size for smaller screens */
+    }
+    .hero-section p {
+        font-size: 1rem;
+        max-width: 90%; /* Prevent text overflow */
+    }
+}
+
+
+/* Languages Section */
+.languages-section {
+    background: #002147;
+    color: white;
+    padding: 60px 0;
+    border-radius: 10px;
+}
+.language-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.language-card .flag {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+.language-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Make language cards responsive */
+@media (max-width: 768px) {
+    .language-card {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 70px 0;
+}
+
+/* Animation for the whole testimonial section */
+@keyframes fadeInTestimonials {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.testimonials-section {
+    opacity: 0;
+    animation: fadeInTestimonials 1s ease-out forwards;
+}
+
+/* Individual Testimonial Card Animation */
+@keyframes scaleUp {
+    from {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-item.active .testimonial-card {
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+/* Testimonial Image */
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+    font-size: 1.1rem;
+}
+.testimonial-card h5 {
+    font-size: 1rem;
+    color: #002147;
+    margin-top: 10px;
+}
+
+/* Carousel Controls */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #002147;
+    border-radius: 50%;
+    padding: 10px;
+}
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    background-color: #f8b400;
+}
+
+/* Buttons */
+.btn {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+.btn-warning:hover {
+    background-color: #f8b400;
+    transform: translateY(-3px);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #002147; /* Dark Blue */
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+.footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #f8b400; /* Gold */
+}
+.footer p {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+/* Social Media Icons */
+.footer-social a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.footer-social a:hover {
+    transform: translateY(-3px);
+    color: #f8b400;
+}
+
+/* Footer Divider */
+.footer-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px 0;
+}
+
+/* Copyright Text */
+.footer p.text-center {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #bbb;
+}
+
+/* Typing Animation Container */
+.typing-container {
+    margin-top: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* English Text */
+.typing-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    min-height: 50px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 5px;  /* Reduce space between English and translation */
+}
+
+/* Translated Text */
+.typing-text.translated {
+    font-size: 1.6rem;
+    color: #f8b400;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px; /* Reduce space further */
+}
+
+/* Apply styles only to the Services Page */
+.services-page {
+    background-color: #f4f7fc;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+/* ✅ Services Page Styling */
+.services-page {
+    background-color: #f4f7fc;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+/* ✅ Service Card Design */
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 270px; /* ✅ Ensures uniform height */
+    border-bottom: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ✅ Hover Effect */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    border-bottom: 4px solid #f8b400; /* Accent border effect */
+}
+
+/* ✅ Service Icons */
+.service-icon {
+    font-size: 3.5rem;
+    color: #004080;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+}
+.service-card:hover .service-icon {
+    color: #f8b400;
+}
+
+/* ✅ Service Headings */
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #002147;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ✅ Service Descriptions */
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* ✅ Add a Bottom Accent Line */
+.service-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #f8b400;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.service-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* ✅ Responsive Grid Layout */
+.services-page .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px; /* Space between rows */
+}
+.services-page .col-md-4 {
+    display: flex;
+    padding: 10px;
+}
+
+/* ✅ Center "Request a Quote" Button */
+.services-page .text-center .btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #004080;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    margin-top: 30px;
+    margin-bottom: 60px;  /* Keeps button away from footer */
+    border: 2px solid transparent;
+}
+.services-page .text-center .btn:hover {
+    background-color: #f8b400;
+    color: #004080;
+    border: 2px solid #004080;
+    transform: translateY(-3px);
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+    .services-page .col-md-4 {
+        width: 100%;
+    }
+    .service-card {
+        min-height: 250px; /* Adjust for mobile */
+    }
+    .service-icon {
+        font-size: 3rem;
+    }
+}
+
+/* Section Headings */
+.services-page h1 {
+    color: #004080;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.services-page .lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Add a separator effect */
+.services-page .service-card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #f8b400;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+.services-page .service-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* Adjust Spacing for 3 Columns */
+.services-page .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px; /* Space between rows */
+}
+.services-page .col-md-4 {
+    display: flex;
+    padding: 10px;
+}
+
+/* Call to Action Button */
+.services-page .text-center .btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #004080;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    margin-top: 30px;
+    margin-bottom: 60px;  /* Keeps button away from footer */
+    border: 2px solid transparent;
+}
+.services-page .text-center .btn:hover {
+    background-color: #f8b400;
+    color: #004080;
+    border: 2px solid #004080;
+    transform: translateY(-3px);
+}
+/* About Us Page Styling */
+.about-page {
+    background-color: #f4f7fc;
+    padding-bottom: 50px;
+}
+
+.about-page h1, .about-page h3 {
+    color: #004080;
+    font-weight: bold;
+}
+.about-page .lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* About Icons */
+.about-icon {
+    font-size: 3rem;
+    color: #004080;
+    margin-bottom: 15px;
+}
+.about-page .col-md-4:hover .about-icon {
+    color: #f8b400;
+}
+
+/* CTA Button */
+.about-page .btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #004080;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    margin-top: 30px;
+}
+.about-page .btn:hover {
+    background-color: #f8b400;
+    color: #004080;
+}
+/* Navbar "Get a Quote" Button - Green */
+.nav-quote-btn {
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: white;
+    background-color: #28a745; /* Green */
+    border: 2px solid #28a745;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.nav-quote-btn:hover,
+.nav-quote-btn:focus,
+.nav-quote-btn:active {
+    background-color: white;
+    color: #28a745 !important;
+    border: 2px solid #28a745;
+    text-decoration: none !important;
+}
+
+/* Quote Page Styling */
+.quote-page {
+    background-color: #f4f7fc;
+    padding-bottom: 50px;
+}
+
+.quote-page h1 {
+    color: #004080;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.quote-page .lead {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+form .form-label {
+    font-weight: bold;
+    color: #004080;
+}
+form .form-control {
+    border-radius: 8px;
+}
+form .btn-primary {
+    background-color: #004080;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+form .btn-primary:hover {
+    background-color: #f8b400;
+    color: white;
+}
+
+/* Success Message */
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Flash Messages */
+.alert {
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+.flash-container {
+    margin-top: 80px; /* Push messages below fixed navbar */
+}
+/* ✅ Fix Progress Bar Height */
+#uploading-status {
+    font-size: 14px;
+    padding: 8px;
+    height: auto;  /* ✅ Prevents it from getting too big */
+    width: 100%;
+    text-align: center;
+}
+/* ✅ Smooth Fade-In Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ✅ Success Message Styling */
+#success-message {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Fade-in Animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Upload Status Bar Styling */
+#uploading-status {
+    font-size: 14px;
+    padding: 8px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* ✅ Fix Progress Bar Height */
+#progress-container {
+    height: 8px;
+}
+
+/* ✅ Ensure Progress Bar Text is Visible */
+#progress-bar {
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+/* ✅ Style Success Message */
+#success-message {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Languages Page Styling */
+.languages-page {
+    background-color: #f4f7fc;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+/* ✅ Ensure Default Text Color for Languages */
+.language-card {
+    background: white;  /* ✅ Ensure visible background */
+    color: black !important;  /* ✅ Fix text visibility */
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Ensure Language Name is Always Visible */
+.language-card p {
+    color: black !important;  /* ✅ Fixes white text issue */
+    font-weight: bold;
+}
+
+/* ✅ Fix Hover Effect */
+.language-card:hover {
+    background: rgba(255, 255, 255, 0.9);  /* ✅ Keep contrast */
+    transform: translateY(-5px);
+    color: black !important;
+}
+
+/* ✅ Fix Flag Styling */
+.language-card .flag {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* ✅ Hover Effect */
+.language-card:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+    .language-card {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+/* ✅ Search Bar Styling */
+.search-box {
+    max-width: 400px;
+    margin: auto;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    transition: all 0.3s ease-in-out;
+}
+.search-box:focus {
+    border-color: #004080;
+    box-shadow: 0 0 8px rgba(0, 64, 128, 0.2);
+}
+/* ✅ Fix Section Spacing */
+.section {
+    padding: 60px 0;
+}
+
+/* ✅ Improve Navbar Visibility */
+.navbar {
+    background-color: #002147 !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Improve CTA Buttons */
+.btn {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #004080;
+    border: 2px solid #004080;
+}
+
+.btn-primary:hover {
+    box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
+}
+.feature-box i {
+    color: #007bff;
+    font-size: 4rem; /* Keep icon size consistent */
+
+}
+.feature-box {
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+/* ✅ Ensure Mobile Responsiveness */
+@media (max-width: 768px) {
+    .btn {
+        font-size: 1rem;
+        padding: 10px 16px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ✅ Fix Footer */
+.footer {
+    background-color: #002147;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.footer-links a {
+    color: #ddd;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+/* Fix "Get a Quote" Button */
+.nav-quote-btn {
+    font-size: 1rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white !important;
+    background-color: #28a745; /* ✅ Green Button */
+    border: 2px solid #28a745;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Ensure Text Remains Visible on Hover */
+.nav-quote-btn:hover,
+.nav-quote-btn:focus,
+.nav-quote-btn:active {
+    background-color: white;
+    color: #28a745 !important; /* ✅ Keep text color green */
+    border: 2px solid #28a745;
+    text-decoration: none !important;
+}
+/* ✅ Improve Hero Section */
+.jumbotron {
+    background: linear-gradient(to right, #002147, #0056b3);
+    color: white;
+    border-radius: 10px;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Fix Features Section */
+.features-section i {
+    margin-bottom: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+.features-section i:hover {
+    transform: scale(1.1);
+}
+
+/* ✅ Fix Language Cards */
+.language-card {
+    background: white;
+    color: black !important;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.language-card:hover {
+    background: #f8f9fa;
+    transform: translateY(-5px);
+}
+
+/* ✅ Improve Testimonials */
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    transition: all 0.3s ease-in-out;
+}
+.carousel-item.active .testimonial-card {
+    animation: scaleUp 0.5s ease-in-out;
+}
+
+/* ✅ Animation */
+@keyframes scaleUp {
+    from {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ✅ Fix Testimonial Controls */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #002147;
+    border-radius: 50%;
+    padding: 10px;
+}
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    background-color: #f8b400;
+}

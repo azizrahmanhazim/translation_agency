@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Supported Languages - Translinga{% endblock %}
+
+{% block content %}
+<div class="container languages-page mt-5">
+    <h1 class="text-center mb-4">Languages We Support</h1>
+    <p class="text-center lead">We provide translation services in multiple languages worldwide.</p>
+
+    <!-- ✅ Search Bar -->
+    <div class="search-container text-center mt-3">
+        <input type="text" id="language-search" class="form-control search-box" placeholder="Search for a language...">
+    </div>
+
+    <!-- ✅ Language Grid -->
+    <div class="row mt-4" id="languages-list">
+        {% set languages = [
+            ('English', '🇬🇧'),
+            ('Arabic', '🇸🇦'),
+            ('Persian', '🇮🇷'),
+        ('Dari', '🇦🇫'),
+            ('Pashto', '🇦🇫'),
+            ('Urdu', '🇵🇰'),
+            ('French', '🇫🇷'),
+            ('German', '🇩🇪'),
+            ('Spanish', '🇪🇸'),
+            ('Russian', '🇷🇺'),
+            ('Chinese', '🇨🇳'),
+            ('Japanese', '🇯🇵'),
+            ('Turkish', '🇹🇷')
+        ] %}
+
+        {% for language, flag in languages %}
+        <div class="col-md-3 col-sm-6 language-item">
+            <div class="language-card">
+                <span class="flag">{{ flag }}</span>
+                <p class="language-name">{{ language }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- ✅ Load JavaScript for Search -->
+<script src="{{ url_for('static', filename='js/language-search.js') }}"></script>
+
+{% endblock %}
