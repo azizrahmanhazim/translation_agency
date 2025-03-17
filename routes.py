@@ -21,22 +21,22 @@ def is_valid_email(email):
 # ✅ Homepage Route
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', active_page="home")
 
 # ✅ Services Page Route
 @app.route('/services')
 def services():
-    return render_template('services.html')
+    return render_template('services.html', active_page="services")
 
 # ✅ Languages Page Route
 @app.route('/languages')
 def languages():
-    return render_template('languages.html')
+    return render_template('languages.html', active_page="languages")
 
 # ✅ About Page Route
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', active_page="about")
 
 # ✅ Contact Page Route
 @app.route('/contact', methods=['GET', 'POST'])
@@ -69,7 +69,7 @@ def contact():
         except Exception as e:
             return jsonify({"message": f"Email sending failed: {str(e)}"}), 500
 
-    return render_template('contact.html')
+    return render_template('contact.html', active_page="contact")
 
 # ✅ Quote Request Route
 @app.route('/quote', methods=['GET', 'POST'])

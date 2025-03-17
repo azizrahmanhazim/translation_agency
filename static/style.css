@@ -306,6 +306,14 @@ body {
     color: #bbb;
 }
 
+.nav-link.active {
+    font-weight: bold;
+    color: #f8b400 !important; /* Highlight active page */
+    text-decoration: none;
+}
+
+
+
 /* Typing Animation Container */
 .typing-container {
     margin-top: 20px;
