@@ -1,14 +1,13 @@
-document.getElementById("language-search").addEventListener("keyup", function () {
-    let searchValue = this.value.toLowerCase();
-    let languageItems = document.querySelectorAll(".language-item");
+function searchLanguages() {
+    let input = document.getElementById("languageSearch").value.toLowerCase();
+    let cards = document.querySelectorAll(".language-card");
 
-    languageItems.forEach(function (item) {
-        let languageName = item.querySelector(".language-name").textContent.toLowerCase();
-
-        if (languageName.includes(searchValue)) {
-            item.style.display = "block";
+    cards.forEach(card => {
+        let language = card.textContent.toLowerCase();
+        if (language.includes(input)) {
+            card.style.display = "block";
         } else {
-            item.style.display = "none";
+            card.style.display = "none";
         }
     });
-});
+}

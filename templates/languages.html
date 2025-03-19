@@ -3,45 +3,35 @@
 {% block title %}Supported Languages - Translinga{% endblock %}
 
 {% block content %}
-<div class="container languages-page mt-5">
-    <h1 class="text-center mb-4">Languages We Support</h1>
-    <p class="text-center lead">We provide translation services in multiple languages worldwide.</p>
+<section class="languages-section">
+    <div class="container">
+        <h2 class="section-title">Supported Languages</h2>
 
-    <!-- ✅ Search Bar -->
-    <div class="search-container text-center mt-3">
-        <input type="text" id="language-search" class="form-control search-box" placeholder="Search for a language...">
-    </div>
+        <!-- Search Bar -->
+        <input type="text" id="languageSearch" placeholder="Search for a language..." onkeyup="searchLanguages()">
 
-    <!-- ✅ Language Grid -->
-    <div class="row mt-4" id="languages-list">
-        {% set languages = [
-        ('English', '🇬🇧'),
-        ('Arabic', '🇸🇦'),
-        ('Persian', '🇮🇷'),
-        ('Dari', '🇦🇫'),
-        ('Pashto', '🇦🇫'),
-        ('Urdu', '🇵🇰'),
-        ('French', '🇫🇷'),
-        ('German', '🇩🇪'),
-        ('Spanish', '🇪🇸'),
-        ('Russian', '🇷🇺'),
-        ('Chinese', '🇨🇳'),
-        ('Japanese', '🇯🇵'),
-        ('Turkish', '🇹🇷')
-        ] %}
-
-        {% for language, flag in languages %}
-        <div class="col-md-3 col-sm-6 language-item">
-            <div class="language-card">
-                <span class="flag">{{ flag }}</span>
-                <p class="language-name">{{ language }}</p>
-            </div>
+        <!-- Languages Grid -->
+        <div class="languages-grid">
+            <div class="language-card"><span class="language-code">EN</span><p>English</p></div>
+            <div class="language-card"><span class="language-code">AR</span><p>العربية (Arabic)</p></div>
+            <div class="language-card"><span class="language-code">PS</span><p>پښتو (Pashto)</p></div>
+            <div class="language-card"><span class="language-code">FA</span><p>فارسی (Persian)</p></div>
+            <div class="language-card"><span class="language-code">DA</span><p>دری (Dari)</p></div>
+            <div class="language-card"><span class="language-code">UR</span><p>اردو (Urdu)</p></div>
+            <div class="language-card"><span class="language-code">FR</span><p>Français (French)</p></div>
+            <div class="language-card"><span class="language-code">ES</span><p>Español (Spanish)</p></div>
+            <div class="language-card"><span class="language-code">DE</span><p>Deutsch (German)</p></div>
+            <div class="language-card"><span class="language-code">ZH</span><p>中文 (Chinese)</p></div>
+            <div class="language-card"><span class="language-code">RU</span><p>Русский (Russian)</p></div>
+            <div class="language-card"><span class="language-code">HI</span><p>हिन्दी (Hindi)</p></div>
+            <div class="language-card"><span class="language-code">BC</span><p>بلوچی (Balochi)</p></div>
+            <div class="language-card"><span class="language-code">SD</span><p>سنڌي (Sindhi)</p></div>
+            <div class="language-card"><span class="language-code">TR</span><p>Türkçe (Turkish)</p></div>
         </div>
-        {% endfor %}
     </div>
-</div>
+</section>
 
-<!-- ✅ Load JavaScript for Search -->
+<!-- Load JavaScript for Search -->
 <script src="{{ url_for('static', filename='js/language-search.js') }}"></script>
 
 {% endblock %}

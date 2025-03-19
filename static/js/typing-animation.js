@@ -5,20 +5,17 @@ document.addEventListener("DOMContentLoaded", function() {
             translated: "مرحباً بكم في خدمات الترجمة لدينا" // Arabic
         },
         {
-            english: "Experience translation services with us",
-            translated: "زموږ سره د ژباړې خدمات تجربه کړئ" // Pashto
+            english: "Fast and accurate translations for your business needs",
+            translated: "ستاسو د سوداګريزو اړتياوو لپاره چټکه او دقيقه ژباړه" // Pashto
         },
         {
             english: "Experience the Best Translation Services with Us",
             translated: "ہمارے ساتھ ترجمہ کی بہترین خدمات کا تجربہ کریں" // Urdu
         },
+
         {
-            english: "Bringing the world closer with words",
-            translated: "¡Acercando el mundo con palabras" // Spanish
-        },
-        {
-            english: "Quality translations you can trust",
-            translated: "ترجمه های با کیفیتی که می توانید به آنها اعتماد کنید" // Urdu
+            english: "One world, many languages – we connect them all",
+            translated: " یک جهان، زبان‌های گوناگون – ما همه را وصل می‌کنیم" // Persian
         }
     ];
 
@@ -29,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let isDeleting = false;
     let isEnglishTyping = true; // ✅ Controls whether English or translation is typing
     let typingSpeed = 200;  // Word typing speed
-    let pauseTime = 2000;   // Pause after full sentence
+    let pauseTime = 1000;   // Pause after full sentence
 
     function typeSentence() {
         let englishTextElement = document.getElementById("english-text");
