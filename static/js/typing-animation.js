@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
             translated: "مرحباً بكم في خدمات الترجمة لدينا" // Arabic
         },
         {
-            english: "Fast and accurate translations for your business needs",
-            translated: "ستاسو د سوداګريزو اړتياوو لپاره چټکه او دقيقه ژباړه" // Pashto
+            english: "Quality Translations Tailored for Your Needs",
+            translated: "ستاسو د اړتیاوو سره سم باکيفيته ژباړه" // Pashto
         },
         {
             english: "Experience the Best Translation Services with Us",
@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
         },
 
         {
-            english: "One world, many languages – we connect them all",
-            translated: " یک جهان، زبان‌های گوناگون – ما همه را وصل می‌کنیم" // Persian
+            english: "Fast, Reliable, and Precise Translation Services",
+            translated: "خدمات ترجمه سریع، قابل اعتماد و دقیق" // Persian
         }
     ];
 

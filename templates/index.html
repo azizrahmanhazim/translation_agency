@@ -5,12 +5,9 @@
 {% block content %}
 
 <!-- Hero Section -->
-<div class="jumbotron text-center hero-section">
-    <h1 class="display-4" style="
-    color: #FFFFFF;
-">Professional Translation Services</h1>
-    <p class="lead" style="
-    color: #DDDDDD">
+<div class="container-fluid py-5 text-center hero-section">
+    <h1 class="display-4 text-white">Professional Translation Services</h1>
+    <p class="lead text-light">
         Providing accurate, reliable, and fast translations to meet all your business needs.
     </p>
 
@@ -21,12 +18,12 @@
         <span id="translated-text" class="typing-text translated"></span>
     </div>
 
-    <div class="mt-4" style="margin-top:10rem">
-        <a href="/quote" class="btn btn-primary btn-lg mx-2 mb-2">Start Your Project</a>
-        <a href="/services" class="btn btn-outline-light btn-lg mx-2 mb-2 " style="
-    color: wheat;"> Our Services</a>
+    <div class="mt-4">
+        <a href="/quote" class="btn btn-primary btn-lg mx-2 mb-2 d-block d-md-inline">Start Your Project</a>
+        <a href="/services" class="btn btn-outline-light btn-lg mx-2 mb-2 d-block d-md-inline">Our Services</a>
     </div>
 </div>
+
 <!-- Key Features Section -->
 <section class="features-section text-center section">
     <div class="container">
@@ -34,21 +31,21 @@
         <div class="row mt-5">
             <div class="col-md-4">
                 <div class="feature-box">
-                    <i class="fas fa-globe"></i>
+                    <i class="bi bi-globe fa-3x text-primary"></i>
                     <h4 class="mt-3">Global Expertise</h4>
                     <p>Native language experts delivering culturally relevant translations.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-box">
-                    <i class="fas fa-clock"></i>
+                    <i class="bi bi-clock fa-3x text-primary"></i>
                     <h4 class="mt-3">Fast Turnaround</h4>
                     <p>Quick and reliable translations without sacrificing quality.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-box">
-                    <i class="fas fa-shield-alt"></i>
+                    <i class="bi bi-shield-lock fa-3x text-primary"></i>
                     <h4 class="mt-3">Secure & Confidential</h4>
                     <p>Data privacy and security ensured for every project.</p>
                 </div>
@@ -58,11 +55,11 @@
 </section>
 
 <!-- Call-to-Action Section -->
-<section class="cta-section text-center">
+<section class="cta-section text-center py-5">
     <div class="container">
-        <h2 class="mb-4">Ready to Get Started?</h2>
+        <h2 class="mb-5">Ready to Get Started?</h2>
         <p>Contact us today to discuss your translation needs and get a personalized quote.</p>
-        <a href="/quote" class="btn btn-light">Request a Quote</a>
+        <a href="/quote" class="btn btn-warning btn-lg">Request a Quote</a>
     </div>
 </section>
 

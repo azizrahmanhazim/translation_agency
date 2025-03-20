@@ -1,4 +1,4 @@
-/* General Styles */
+ /* General Styles */
 html {
     scroll-behavior: smooth;
 }
@@ -7,6 +7,11 @@ body {
     background-color: #f8f9fa;
     color: #333;
 }
+
+.container {
+    padding: 0 15px;
+}
+
 
 /* Hero Section */
 .hero-section {
@@ -17,9 +22,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    padding: 60px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -56,7 +61,7 @@ body {
 .hero-section .btn-outline-light {
     background-color: transparent;
     border: 2px solid #004080;
-    color: #004080;
+    color: wheat;
     transition: all 0.3s ease-in-out;
 }
 .hero-section .btn-outline-light:hover {
@@ -78,35 +83,56 @@ body {
     line-height: 1.6;
 }
 
-/* Typing Animation Container */
 .typing-container {
-    margin-top: 20px;
+    max-width: 90%;
+    height: 7rem; /* ✅ FIXED height to prevent movement */
     text-align: center;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* English Text */
-.typing-text {
+/* ✅ Lock Text Height */
+.typing-text, .typing-text.translated {
     font-size: 1.8rem;
     font-weight: bold;
-    min-height: 50px;
     color: #f8b400;
     display: block;
     white-space: nowrap;
     overflow: hidden;
-    margin-bottom: 1px;  /* Reduce space between English and translation */
+    height: 2rem; /* ✅ Adjusted height to prevent excessive spacing */
+    margin-bottom: 0.1rem; /* ✅ Further reduces space */
 }
-
-/* Translated Text */
 .typing-text.translated {
     font-size: 1.6rem;
     color: #f8b400;
     font-weight: bold;
-    text-align: center;
-    margin-top: -20px; /* Reduce space further */
+    margin-top: -8px; /* ✅ Pulls translation text closer */
 }
 
-/* CTA Section */
+/* ✅ Keep CTA Buttons in Place */
+.cta-buttons {
+    margin-top: 20px; /* ✅ Space between text and buttons */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .typing-text, .typing-text.translated {
+        font-size: 1rem;
+        height: 2rem;
+    }
+    .typing-container {
+        height: 5rem; /* ✅ Adjusted for mobile */
+    }
+    .cta-buttons {
+        margin-top: 15px;
+    }
+}
 .cta-section {
     background: linear-gradient(to right, #004080, #002147); /* ✅ Professional Blue Gradient */
     color: white;
@@ -155,35 +181,14 @@ body {
     margin: auto;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh;
-    }
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    .hero-section p {
-        font-size: 1.1rem;
-    }
-    .cta-section h2 {
-        font-size: 2rem;
-    }
-    .cta-section p {
-        font-size: 1rem;
-    }
-    .btn {
-        font-size: 1rem;
-    }
-}
-
 /* Sticky Navbar */
 .navbar {
-    background-color: #002147 !important; /* ✅ Dark blue for consistency */
+    background-color: #002147 !important;
     padding: 15px 0;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    z-index: 1050;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -205,7 +210,8 @@ body {
 /* Active Link Indicator */
 .navbar-nav .nav-link.active {
     font-weight: bold;
-    border-bottom: 3px solid #F8B400; /* ✅ Gold underline to show the active page */
+    color: #F8B400 !important;
+    border-bottom: none; /* ✅ Gold underline to show the active page */
 }
 
 
@@ -559,14 +565,6 @@ body {
     color: white;
 }
 
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    #success-message,
-    #error-message {
-        max-width: 100%; /* Adjusts width on smaller screens */
-    }
-}
 
 /* Quote Page Container */
 .quote-page {
