@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1eaa3733-a1cc-483e-9d20-e2c3d0a73e18" name="Changes" comment="Initial project setup" />
+    <list default="true" id="1eaa3733-a1cc-483e-9d20-e2c3d0a73e18" name="Changes" comment="git reset --hard origin/main  # Use 'main' or 'master' depending on your branch">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/typing-animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/typing-animation.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742368067897</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="git reset --hard origin/main  # Use 'main' or 'master' depending on your branch">
+      <option name="closed" value="true" />
+      <created>1742457836649</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742457836649</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -114,6 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial project setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial project setup" />
+    <MESSAGE value="git reset --hard origin/main  # Use 'main' or 'master' depending on your branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="git reset --hard origin/main  # Use 'main' or 'master' depending on your branch" />
   </component>
 </project>

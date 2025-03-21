@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             english: "Quality Translations Tailored for Your Needs",
-            translated: "ستاسو د اړتیاوو سره سم باکيفيته ژباړه" // Pashto
+            translated: "ستاسو د اړتیاوو سره سمه باکيفيته ژباړه" // Pashto
         },
         {
             english: "Experience the Best Translation Services with Us",
