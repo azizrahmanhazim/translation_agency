@@ -3,30 +3,110 @@
 {% block title %}Supported Languages - Translinga{% endblock %}
 
 {% block content %}
-<section class="languages-section">
+<section class="languages-section py-5">
     <div class="container">
-        <h2 class="section-title">Supported Languages</h2>
+        <h2 class="text-center mb-4">Supported Languages</h2>
+        <p class="text-center mb-5">We provide translation services in a wide range of languages.</p>
 
         <!-- Search Bar -->
-        <input type="text" id="languageSearch" placeholder="Search for a language..." onkeyup="searchLanguages()">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6">
+                <input type="text" id="languageSearch" class="form-control" placeholder="Search for a language..." onkeyup="searchLanguages()">
+            </div>
+        </div>
 
         <!-- Languages Grid -->
-        <div class="languages-grid">
-            <div class="language-card"><span class="language-code">EN</span><p>English</p></div>
-            <div class="language-card"><span class="language-code">AR</span><p>العربية (Arabic)</p></div>
-            <div class="language-card"><span class="language-code">PS</span><p>پښتو (Pashto)</p></div>
-            <div class="language-card"><span class="language-code">FA</span><p>فارسی (Persian)</p></div>
-            <div class="language-card"><span class="language-code">DA</span><p>دری (Dari)</p></div>
-            <div class="language-card"><span class="language-code">UR</span><p>اردو (Urdu)</p></div>
-            <div class="language-card"><span class="language-code">FR</span><p>Français (French)</p></div>
-            <div class="language-card"><span class="language-code">ES</span><p>Español (Spanish)</p></div>
-            <div class="language-card"><span class="language-code">DE</span><p>Deutsch (German)</p></div>
-            <div class="language-card"><span class="language-code">ZH</span><p>中文 (Chinese)</p></div>
-            <div class="language-card"><span class="language-code">RU</span><p>Русский (Russian)</p></div>
-            <div class="language-card"><span class="language-code">HI</span><p>हिन्दी (Hindi)</p></div>
-            <div class="language-card"><span class="language-code">BC</span><p>بلوچی (Balochi)</p></div>
-            <div class="language-card"><span class="language-code">SD</span><p>سنڌي (Sindhi)</p></div>
-            <div class="language-card"><span class="language-code">TR</span><p>Türkçe (Turkish)</p></div>
+        <div class="row" id="languageGrid">
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">EN</span>
+                    <p class="language-name">English</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">AR</span>
+                    <p class="language-name">العربية (Arabic)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">PS</span>
+                    <p class="language-name">پښتو (Pashto)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">FA</span>
+                    <p class="language-name">فارسی (Persian)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">DA</span>
+                    <p class="language-name">دری (Dari)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">UR</span>
+                    <p class="language-name">اردو (Urdu)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">FR</span>
+                    <p class="language-name">Français (French)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">ES</span>
+                    <p class="language-name">Español (Spanish)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">DE</span>
+                    <p class="language-name">Deutsch (German)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">ZH</span>
+                    <p class="language-name">中文 (Chinese)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">RU</span>
+                    <p class="language-name">Русский (Russian)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">HI</span>
+                    <p class="language-name">हिन्दी (Hindi)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">BC</span>
+                    <p class="language-name">بلوچی (Balochi)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">SD</span>
+                    <p class="language-name">سنڌي (Sindhi)</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="language-card p-4 text-center">
+                    <span class="language-code">TR</span>
+                    <p class="language-name">Türkçe (Turkish)</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

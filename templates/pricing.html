@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Pricing - Your Website{% endblock %}
+
+{% block content %}
+    <!-- Header Section -->
+    <div class="text-center py-16 bg-gradient-to-r from-purple-500 to-indigo-600 text-white">
+        <h1 class="text-4xl font-bold">Pricing Plans</h1>
+        <p class="mt-4 text-lg">Choose the plan that fits your needs.</p>
+        <div class="mt-6">
+            <button class="px-6 py-2 bg-white text-purple-600 rounded-full font-semibold">Monthly</button>
+            <button class="px-6 py-2 bg-transparent text-white rounded-full font-semibold">Annual</button>
+        </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="container mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div class="pricing-card bg-white rounded-lg shadow-lg p-8 text-center">
+                <h2 class="text-2xl font-bold text-purple-600">Basic</h2>
+                <p class="mt-4 text-gray-600">Perfect for individuals</p>
+                <p class="mt-6 text-4xl font-bold">$9.99<span class="text-gray-500 text-lg">/mo</span></p>
+                <ul class="mt-8 space-y-4">
+                    <li>✅ Feature 1</li>
+                    <li>✅ Feature 2</li>
+                    <li>❌ Feature 3</li>
+                </ul>
+                <button class="mt-8 px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700">Get Started</button>
+            </div>
+
+            <!-- Standard Plan -->
+            <div class="pricing-card bg-white rounded-lg shadow-lg p-8 text-center transform scale-105">
+                <h2 class="text-2xl font-bold text-indigo-600">Standard</h2>
+                <p class="mt-4 text-gray-600">Great for small teams</p>
+                <p class="mt-6 text-4xl font-bold">$19.99<span class="text-gray-500 text-lg">/mo</span></p>
+                <ul class="mt-8 space-y-4">
+                    <li>✅ Feature 1</li>
+                    <li>✅ Feature 2</li>
+                    <li>✅ Feature 3</li>
+                </ul>
+                <button class="mt-8 px-6 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700">Get Started</button>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="pricing-card bg-white rounded-lg shadow-lg p-8 text-center">
+                <h2 class="text-2xl font-bold text-pink-600">Premium</h2>
+                <p class="mt-4 text-gray-600">Best for large teams</p>
+                <p class="mt-6 text-4xl font-bold">$29.99<span class="text-gray-500 text-lg">/mo</span></p>
+                <ul class="mt-8 space-y-4">
+                    <li>✅ Feature 1</li>
+                    <li>✅ Feature 2</li>
+                    <li>✅ Feature 3</li>
+                </ul>
+                <button class="mt-8 px-6 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700">Get Started</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center">Frequently Asked Questions</h2>
+        <div class="mt-8 space-y-4">
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold">What payment methods do you accept?</h3>
+                <p class="mt-2 text-gray-600">We accept all major credit cards and PayPal.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+                <h3 class="font-semibold">Can I switch plans later?</h3>
+                <p class="mt-2 text-gray-600">Yes, you can upgrade or downgrade at any time.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

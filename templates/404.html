@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found - Translinga{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <!-- Animate.css for animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Custom CSS for 404 page -->
+    <style>
+        /* Gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        /* Hover effect for buttons */
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custom button styles */
+        .btn-custom {
+            background-color: #ffffff;
+            color: #6a11cb;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #f8f9fa;
+            color: #2575fc;
+        }
+
+        /* Custom outline button styles */
+        .btn-outline-custom {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-custom:hover {
+            background-color: #ffffff;
+            color: #6a11cb;
+        }
+
+        /* Fun fact text styling */
+        .fun-fact {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
+        /* Illustration styling */
+        .illustration {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Accessibility focus styles */
+        a:focus, button:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="gradient-bg min-vh-100 d-flex flex-column align-items-center justify-content-center text-white text-center py-5">
+        <!-- 404 Heading -->
+        <h1 class="display-1 fw-bold animate__animated animate__bounce">404</h1>
+        <p class="fs-3 animate__animated animate__fadeIn">Oops! Looks like you're lost.</p>
+
+        <!-- Navigation Buttons -->
+        <div class="d-flex gap-3 flex-wrap justify-content-center">
+            <a href="{{ url_for('home') }}" class="btn btn-custom hover-scale">Go Home</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-outline-custom hover-scale">Contact Us</a>
+            <button onclick="history.back()" class="btn btn-outline-custom hover-scale">Go Back</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <!-- Random Fun Fact Script -->
+    <script>
+        const funFacts = [
+            "Did you know? The first website went live in 1991.",
+            "Fun fact: There are over 1.9 billion websites online today.",
+            "Joke: Why did the web page go to school? To improve its site!",
+        ];
+        const randomFact = funFacts[Math.floor(Math.random() * funFacts.length)];
+        document.getElementById('fun-fact').textContent = randomFact;
+    </script>
+{% endblock %}

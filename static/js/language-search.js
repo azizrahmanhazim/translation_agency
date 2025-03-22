@@ -1,13 +1,13 @@
 function searchLanguages() {
-    let input = document.getElementById("languageSearch").value.toLowerCase();
-    let cards = document.querySelectorAll(".language-card");
+    const searchTerm = document.getElementById('languageSearch').value.toLowerCase();
+    const languageCards = document.querySelectorAll('.language-card');
 
-    cards.forEach(card => {
-        let language = card.textContent.toLowerCase();
-        if (language.includes(input)) {
-            card.style.display = "block";
+    languageCards.forEach(card => {
+        const languageName = card.querySelector('.language-name').textContent.toLowerCase();
+        if (languageName.includes(searchTerm)) {
+            card.style.display = 'block';
         } else {
-            card.style.display = "none";
+            card.style.display = 'none';
         }
     });
 }

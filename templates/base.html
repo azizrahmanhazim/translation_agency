@@ -4,58 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Professional translation services in multiple languages.">
+    <meta property="og:title" content="Translinga - Professional Translation Services">
+    <meta property="og:description" content="Professional translation services in multiple languages.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/logo.png') }}">
+    <meta property="og:url" content="{{ request.url }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 
     <title>{% block title %}Translinga{% endblock %}</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
 
-<!-- ✅ Bootstrap Responsive Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="/">Translinga</a>
-        <button class="navbar-toggler" style="
-    background-color: LAVENDER" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="/services">Services</a></li>
-                <li class="nav-item"><a class="nav-link {% if active_page == 'languages' %}active{% endif %}" href="/languages">Languages</a></li>
-                <li class="nav-item"><a class="nav-link {% if active_page == 'about' %}active{% endif %}" href="/about">About Us</a></li>
-                <li class="nav-item"><a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="/contact">Contact</a></li>
-                <li class="nav-item">
-                    <a class="btn btn-warning text-dark ms-2" href="/quote">Get a Quote</a>
-                </li>
-            </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">Translinga</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link {% if active_page == 'home' %}active{% endif %}" href="{{ url_for('home') }}" {% if active_page == 'home' %}aria-current="page"{% endif %}>Home</a></li>
+                    <li class="nav-item"><a class="nav-link {% if active_page == 'services' %}active{% endif %}" href="{{ url_for('services') }}" {% if active_page == 'services' %}aria-current="page"{% endif %}>Services</a></li>
+                    <li class="nav-item"><a class="nav-link {% if active_page == 'languages' %}active{% endif %}" href="{{ url_for('languages') }}" {% if active_page == 'languages' %}aria-current="page"{% endif %}>Languages</a></li>
+                    <li class="nav-item"><a class="nav-link {% if active_page == 'about' %}active{% endif %}" href="{{ url_for('about') }}" {% if active_page == 'about' %}aria-current="page"{% endif %}>About Us</a></li>
+                    <li class="nav-item"><a class="nav-link {% if active_page == 'contact' %}active{% endif %}" href="{{ url_for('contact') }}" {% if active_page == 'contact' %}aria-current="page"{% endif %}>Contact</a></li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-warning text-dark ms-2" href="{{ url_for('quote') }}">Get a Quote</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-1 pt-3" id="main-content">
+        {% block content %}{% endblock %}
     </div>
-</nav>
 
-<!-- ✅ Main Content Container -->
-<div class="container mt-5 pt-5">
-    {% block content %}{% endblock %}
-</div>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-heading">About Translinga</h5>
+                    <p class="footer-text">
+                        Translinga provides professional translation services in multiple languages, ensuring accuracy and cultural relevance for your needs.
+                    </p>
+                </div>
 
-<!-- ✅ Bootstrap Responsive Footer -->
-<footer class="bg-dark text-white text-center py-3 mt-5">
-    <div class="container">
-        <p>&copy; 2024 Translinga. All Rights Reserved.</p>
-    </div>
-</footer>
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="{{ url_for('home') }}" class="footer-link">Home</a></li>
+                        <li><a href="{{ url_for('services') }}" class="footer-link">Services</a></li>
+                        <li><a href="{{ url_for('languages') }}" class="footer-link">Languages</a></li>
+                        <li><a href="{{ url_for('about') }}" class="footer-link">About Us</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{ url_for('static', filename='js/typing-animation.js') }}"></script>
-<script defer src="{{ url_for('static', filename='js/ui-enhancements.js') }}"></script>
+                <!-- Social Media Links -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="footer-heading">Follow Us</h5>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="footer-text mt-3">
+                        Stay connected for updates and offers.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Divider Line -->
+            <div class="footer-line my-4"></div>
+
+            <!-- Copyright Section -->
+            <div class="text-center">
+                <p class="footer-text mb-0">
+                    &copy; 2025 Translinga. All Rights Reserved.
+                </p>
+                <p class="footer-text">
+                    <a href="#" class="footer-link">Privacy Policy</a> |
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/typing-animation.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/ui-enhancements.js') }}"></script>
 </body>
 </html>

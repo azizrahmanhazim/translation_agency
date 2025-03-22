@@ -1,11 +1,23 @@
+:root {
+    --primary-color: #004080;
+    --secondary-color: #F8B400;
+    --accent-color: #6a11cb;
+    --background-light: #F8F9FA;
+    --text-dark: #002147;
+    --text-light: #FFFFFF;
+    --text-gray: #555555;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Arial', sans-serif;
+    --transition-speed: 0.3s;
+}
  /* General Styles */
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
+    line-height: 1.6; /* Improved readability */
 }
 
 .container {
@@ -84,7 +96,7 @@ body {
 }
 
 .typing-container {
-    max-width: 90%;
+    max-width: none;
     height: 7rem; /* ✅ FIXED height to prevent movement */
     text-align: center;
     display: flex;
@@ -96,7 +108,7 @@ body {
 
 /* ✅ Lock Text Height */
 .typing-text, .typing-text.translated {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #f8b400;
     display: block;
@@ -185,10 +197,10 @@ body {
 .navbar {
     background-color: #002147 !important;
     padding: 15px 0;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1050;
+    z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -205,6 +217,8 @@ body {
     background-color: #004080 !important;
     color: white !important;
 }
+
+
 
 
 /* Active Link Indicator */
@@ -241,17 +255,14 @@ body {
     text-align: center;
 }
 
-/* Spacing for feature items */
-.feature-box {
-    padding: 25px;
-    border-radius: 10px;
+/* Cards */
+.feature-box, .testimonial-card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Hover effect for better engagement */
-.feature-box:hover {
+.feature-box:hover, .testimonial-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .feature-box i {
@@ -290,50 +301,60 @@ body {
 
 /* Languages Section */
 .languages-section {
-    background-color: #F8F9FA;
-    padding: 80px 0;
+    background-color: #f8f9fa;
+    padding: 60px 0;
+}
+
+.languages-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #002147;
     text-align: center;
 }
 
-/* Search Bar */
+.languages-section p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
 #languageSearch {
-    width: 50%;
+    width: 100%;
     padding: 10px;
     font-size: 1rem;
     border: 2px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
-/* Grid Layout for Language Cards */
-.languages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    max-width: 900px;
-    margin: auto;
-}
-
-/* Language Card */
 .language-card {
     background: white;
-    color: black;
-    padding: 15px;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
+    padding: 20px;
     text-align: center;
-    font-size: 1.2rem;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .language-card:hover {
-    background: rgba(255, 255, 255, 0.9);
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.language-code {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #004080;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.language-name {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 0;
+}
 /* Language Code Styling */
 .language-code {
     display: block;
@@ -480,15 +501,19 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
 }
+
+/* Buttons */
 .btn-primary {
-    background-color: #004080;
-    border: 2px solid #004080;
-}
-.btn-primary:hover {
-    box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4);
-    transform: translateY(-2px);
+    background-color: #F8B400;
+    border: 2px solid #F8B400;
+    color: #002147;
+    transition: all 0.3s ease-in-out;
 }
 
+.btn-primary:hover {
+    background-color: #e6a200; /* Darker gold on hover */
+    border-color: #e6a200;
+}
 /* Contact Page Container */
 .contact-page {
     background: #F8F9FA;
@@ -567,72 +592,60 @@ body {
 
 
 /* Quote Page Container */
+/* Quote Page */
 .quote-page {
-    background: #F8F9FA;
+    background-color: #f8f9fa;
     padding: 60px 0;
-    border-radius: 10px;
 }
 
-/* Heading */
 .quote-page h1 {
     font-size: 2.5rem;
     font-weight: bold;
     color: #002147;
+    text-align: center;
 }
 
-.quote-page p.lead {
+.quote-page .lead {
     font-size: 1.2rem;
     color: #555;
-    max-width: 700px;
-    margin: auto;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
 }
 
-/* Quote Form */
-#quote-form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Labels */
-.quote-page .form-label {
+.quote-form .form-label {
     font-size: 1.1rem;
     font-weight: 500;
     color: #444;
 }
 
-/* Form Fields */
-.quote-page .form-control,
-.quote-page .form-select {
+.quote-form .form-control, .quote-form .form-select {
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1rem;
 }
 
-/* File Upload Section */
-#document {
-    padding: 10px;
-    border-radius: 6px;
+.quote-form .btn-primary {
+    background-color: #F8B400;
+    border: 2px solid #F8B400;
+    color: #002147;
+    transition: all 0.3s ease-in-out;
 }
 
-.text-muted {
-    font-size: 0.9rem;
-    color: #666;
+.quote-form .btn-primary:hover {
+    background-color: #e6a200;
+    border-color: #e6a200;
 }
 
-/* Progress Bar */
-#progress-container {
+.progress {
     height: 10px;
     border-radius: 5px;
 }
 
-#progress-bar {
-    height: 10px;
-    border-radius: 5px;
+.progress-bar {
+    background-color: #004080;
 }
-
 /* Error Messages */
 /* Field-Level Error Messages (Including "Message is required" & Subject Errors) */
 .text-danger {
@@ -732,15 +745,128 @@ body {
     }
 }
 
+/* Newsletter Section */
+.newsletter-section {
+    background-color: #f8f9fa;
+}
 
+.newsletter-form .form-control {
+    border-radius: 8px 0 0 8px;
+}
 
+.newsletter-form .btn {
+    border-radius: 0 8px 8px 0;
+}
 
+/* Statistics Section */
+.statistics-section {
+    background-color: #004080;
+}
+
+.statistic-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.statistic-label {
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #f8f9fa;
+}
+
+.testimonial-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-size: 0.9rem;
+    color: #002147;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+        /* Gradient background */
+        .gradient-bg {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        /* Hover effect for buttons */
+        .hover-scale {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Custom button styles */
+        .btn-custom {
+            background-color: #ffffff;
+            color: #6a11cb;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #f8f9fa;
+            color: #2575fc;
+        }
+
+        /* Custom outline button styles */
+        .btn-outline-custom {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-custom:hover {
+            background-color: #ffffff;
+            color: #6a11cb;
+        }
+
+        /* Fun fact text styling */
+        .fun-fact {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-top: 20px;
+        }
+
+        /* Illustration styling */
+  .illustration {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
 
 /* Footer Styling */
 .footer {
     background-color: #002147; /* ✅ Dark blue for branding */
     color: white;
-    padding: 20px 0; /* ✅ Reduced padding for a smaller footer */
+    padding: 40px 0; /* ✅ Reduced padding for a smaller footer */
     text-align: center;
     margin-top:2rem;
 }
